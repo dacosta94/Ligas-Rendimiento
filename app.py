@@ -44,7 +44,7 @@ if archivos_cargados:
         if dataframes:
             df_final = pd.concat(dataframes, ignore_index=True)
             st.write("✅ Archivos unificados. Vista previa de los primeros registros:")
-            st.dataframe(df_final.head(10))
+            st.dataframe(df_final)
 
             with tempfile.NamedTemporaryFile(delete=False, suffix=".xlsx") as tmp:
                 df_final.to_excel(tmp.name, index=False)
